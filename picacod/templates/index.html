@@ -1,0 +1,698 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="{% static 'images/favicon.jpg' %}" rel="icon" type="image/x-icon">
+
+    <title>Picacod Consultancy</title>
+
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style.css -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- main.js -->
+    <!-- <link rel="stylesheet" href="{% static 'main.js' %}"> -->
+    <!-- aos animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div id="preloader">
+        <img src="{% static 'images/logo.png' %}" alt="">
+    </div>
+
+    <nav id="navbar" class="navbar navbar-expand-lg position-fixed w-100" style="z-index: 1000;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light fw-bold d-flex align-items-center justify-content-center"
+                href="{% url 'index' %}">
+                <img src="{% static 'images/pac logo.png' %}" width="160px" alt="Logo" class="align-text-top">
+                <!-- <h4 class="mb-0 ms-1 text-dark fw-bold">PICACOD</h4> -->
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <img src="https://cdn-icons-png.flaticon.com/128/12596/12596853.png" width="30" alt="">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle first-drop" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Company
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'about' %}">Who we are</a></li>
+                            <li><a class="dropdown-item" href="{% url 'services' %}">Services</a></li>
+                            <li><a class="dropdown-item" href="{% url 'careers' %}">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle first-drop" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item d-flex justify-content-between align-items-center"> Web & CMS
+                                    Development <span>▸</span></a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'php' %}">Php</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'wordpress' %}">Wordpress</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'laravel' %}">Laraval</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'react' %}">React js</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'angular' %}">Angular</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'nodejs' %}">Node js</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'cakephp' %}">Cake php</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'codeigniter' %}">CodeIgniter</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'python' %}">Python</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'django' %}">Django</a></li>
+
+                                </ul>
+                            </li>
+                            <li> <a class="dropdown-item d-flex justify-content-between align-items-center"> Mobile App
+                                    Development <span>▸</span></a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'android' %}">Android App</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'ios' %}">IOS App</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'hybrid' %}">Hybrid App</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'flutter' %}">Flutter</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item d-flex justify-content-between align-items-center"> Ecommerce
+                                    Development <span>▸</span></a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'woocommerce' %}">Woocommerce</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'shopify' %}">Shopify</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item d-flex justify-content-between align-items-center"> AI & ML
+                                    <span>▸</span></a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'chatgpt_solution' %}">Chatgpt
+                                            Solution</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'contact_center_solutions' %}">Contact
+                                            Center Solution</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'text_to_speech' %}">Text to speech</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{% url 'bussiness_intelligence' %}">Business
+                                            Intelligence</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="{% url 'sentimental_intelligence' %}">Sentimental Intelligence</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item d-flex justify-content-between align-items-center"> IT &
+                                    Networking <span>▸</span></a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item"
+                                            href="{% url 'database_management_administrtion' %}">Database Management
+                                            & Administration</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'devops_infrastructure' %}">Devops &
+                                            Infrastructure</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="{% url 'information_security_compliance' %}">Information Security &
+                                            Compliance</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="{% url 'network_system_administration' %}">Network & System
+                                            Administration</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'server_management' %}">Server
+                                            Management</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'qa_testing' %}">QA Testing</a></li>
+
+                                </ul>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle first-drop" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Portfolio
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'portfolio' %}">Clients</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Contact
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link first-drop" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link first-drop" href="{% url 'careers' %}">Careers</a>
+                    </li>
+                    <li class="nav-item"></li>
+                    <a class="nav-link first-drop me-5" href="{% url 'careers' %}"><i
+                            class="fa-solid fa-phone-flip fa-fade fa-lg"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <section id="hero">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#heroCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#heroCarousel" data-bs-slide-to="2"></li>
+                <li data-bs-target="#heroCarousel" data-bs-slide-to="3"></li>
+                <li data-bs-target="#heroCarousel" data-bs-slide-to="4"></li>
+                <li data-bs-target="#heroCarousel" data-bs-slide-to="5"></li>
+            </ol>
+    
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url('{% static 'images/Hero/g.jpg' %}');">
+
+                    <div class="carousel-container">
+                        <div class="container">
+                            <h1 data-aos="fade-left" data-aos-duration="2500">Software Development</h1>
+                            <p data-aos="fade-right" data-aos-duration="2500">Design software to act like a likable person to win user's affection.</p>
+                            <a href="{% url 'software_development' %}" class="btn px-3 rounded-0" data-aos="fade-up"
+                                data-aos-duration="2500" style="color: #fff; background-color: #1792db;"
+                                onMouseOver="this.style.backgroundColor='#1792db'"
+                                onMouseOut="this.style.backgroundColor='#079ef8'">Get Started</a>
+                        </div>
+                        <div class="image-right">
+                            <img src="https://i.pinimg.com/736x/31/4c/d3/314cd335170bd8a8f4e3142b1d7326c5.jpg" alt="Software Development Image">
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url('{% static 'images/Hero/g.jpg' %}');">
+                    <div class="carousel-container">
+                        <div class="container">
+                            <h1 data-aos="fade-left">Web Development</h1>
+                            <p data-aos="fade-right">Website without visitors is like a ship lost in the horizon.</p>
+                            <a href="{% url 'web_development' %}" class="btn px-3 rounded-0" data-aos="fade-up"
+                                style="color: #fff; background-color: #1792db;"
+                                onMouseOver="this.style.backgroundColor='#1792db'"
+                                onMouseOut="this.style.backgroundColor='#079ef8'">Get Started</a>
+                        </div>
+                        <div class="image-right">
+                            <img src="https://i.pinimg.com/564x/6d/78/0a/6d780a2d3a57195484ed7c308484b41f.jpg"
+                                alt="Web Development Image">
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url('{% static 'images/Hero/g.jpg' %}');">
+                    <div class="carousel-container">
+                        <div class="container">
+                            <h1 data-aos="fade-left">Mobile App Development</h1>
+                            <p data-aos="fade-right">Building Innovative Apps for a smarter tomorrow.</p>
+                            <a href="{% url 'app_development' %}" class="btn px-3 rounded-0" data-aos="fade-up"
+                                style="color: #fff; background-color: #1792db;"
+                                onMouseOver="this.style.backgroundColor='#1792db'"
+                                onMouseOut="this.style.backgroundColor='#079ef8'">Get Started</a>
+                        </div>
+                        <div class="image-right">
+                            <img src="https://static.iroidtechnologies.com/static/home/images/banner/saly1-med.webp" alt="Mobile Development Image">
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 4 -->
+                <div class="carousel-item" style="background-image: url('{% static 'images/Hero/g.jpg' %}');">
+                    <div class="carousel-container">
+                        <div class="container">
+                            <h1 data-aos="fade-left">AI & ML</h1>
+                            <p data-aos="fade-right">There's no question we are in an AI and Data revolution.</p>
+                            <a href="{% url 'ai_and_ml' %}" class="btn px-3 rounded-0" data-aos="fade-up"
+                                style="color: #fff; background-color: #1792db;"
+                                onMouseOver="this.style.backgroundColor='#1792db'"
+                                onMouseOut="this.style.backgroundColor='#079ef8'">Get Started</a>
+                        </div>
+                        <div class="image-right">
+                            <img src="https://i.pinimg.com/564x/86/0b/82/860b82562025dfad0c1fd0233f6e7ffe.jpg" alt="AI & ML Image">
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 5 -->
+                <div class="carousel-item" style="background-image: url('{% static 'images/Hero/g.jpg' %}');">
+                    <div class="carousel-container">
+                        <div class="container">
+                            <h1 data-aos="fade-left">Ecommerce Development</h1>
+                            <p data-aos="fade-right">Amazing things will happen when you listen to the consumer.</p>
+                            <a href="{% url 'about' %}" class="btn px-3 rounded-0" data-aos="fade-up"
+                                style="color: #fff; background-color: #1792db;"
+                                onMouseOver="this.style.backgroundColor='#1792db'"
+                                onMouseOut="this.style.backgroundColor='#079ef8'">Get Started</a>
+                        </div>
+                        <div class="image-right">
+                            <img src="https://static.iroidtechnologies.com/static/home/images/banner/saly1-med.webp" alt="Ecommerce Development Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+    
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+    </section>
+    
+
+    <!-- home section -->
+    <section id="home">
+        <div class="home">
+            <div class="home-top d-flex align-items-center justify-content-center row text-center">
+                <p class="home-heading p-0 " data-aos="zoom-in" data-aos-duration="3000">We do more than just innovate ;
+                    we create</p>
+                <p class="px-4">Picacod is a professional company that offers more acquirable results and solutions.
+                    They
+                    work with a
+                    variety of businesses within the information and technology sector, and have a good and proper
+                    coordinating partnership with their clients. Emerging external IT surrounding is what they keen.</p>
+
+                <div class="row d-flex d-flex align-items-center justify-content-center gap-3 p-0">
+                    <div class="button-image" data-aos="flip-up" data-aos-duration="2500">
+                        <img src="{% static 'images/services.jpeg' %}" alt="" />
+                        <p class="title">Our Services</p>
+                        <div class="overlay"></div>
+                        <div class="button"><a href="{% url 'services' %}"> View Our Service </a></div>
+                    </div>
+                    <div class="button-image" data-aos="flip-up" data-aos-duration="2500">
+                        <img src="{% static 'images/we are.jpeg' %}" alt="" />
+                        <p class="title">Who We Are</p>
+                        <div class="overlay"></div>
+                        <div class="button"><a href="{% url 'about' %}"> View About Us </a></div>
+                    </div>
+                    <div class="button-image" data-aos="flip-up" data-aos-duration="2500">
+                        <img src="{% static 'images/contact.jpeg' %}" alt="" />
+                        <p class="title">Contact Us</p>
+                        <div class="overlay"></div>
+                        <div class="button"><a href="{% url 'contact' %}"> Get Started Now </a></div>
+                    </div>
+                </div>
+            </div>
+            <!-- grey box - Home section bottom -->
+            <div class="home-bottum row d-flex align-items-center justify-content-center p-0">
+
+                <div class="row d-flex align-items-center justify-content-center gap-3">
+                    <p class="col-md-9 p-0 text-light">Our service is <strong>everything</strong> you need. We
+                        <strong>help
+                            you</strong> launch your product.
+                    </p>
+                    <a href="{% url 'contact' %}"><button class="home-btn rounded-0 home-bottum-button  btn btn-light"
+                            data-aos="zoom-in" data-aos-duration="3500">Get Started Now</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- our features section -->
+
+    <section>
+        <div class="features text-center">
+            <h2 class="features-title text-dark" data-aos="fade-left" data-aos-duration="3500">Our Features</h2>
+            <div class="row d-flex align-items-center justify-content-center" style="height: 100%;">
+                <div class="features-box col-md-6 d-flex flex-column align-items-center justify-content-center text-center"
+                    data-aos="fade-right" data-aos-duration="3500">
+                    <img src="{% static 'images/icons/database.png' %}" class="feature-img" alt="" width="60">
+                    <p class="features-box-title fw-bold">Data Backups</p>
+                    <p class="features-box-content">The backups are the best options and we carefully maintain our
+                        clients project backups to deal with misfortunes in the best manner..</p>
+                </div>
+                <div class="features-box col-md-6 d-flex flex-column align-items-center justify-content-center text-center"
+                    data-aos="fade-right" data-aos-duration="3500">
+                    <img src="{% static 'images/icons/encrypted.png' %}" class="feature-img" alt="" width="60">
+                    <p class="features-box-title fw-bold">Data Protection</p>
+                    <p class="features-box-content">By signing an NDA, our company ensures the utmost safety of all your
+                        private data. We deliver best-rated products to maintain confidentiality.</p>
+                </div>
+                <div class="features-box col-md-6 d-flex flex-column align-items-center justify-content-center text-center"
+                    data-aos="fade-left" data-aos-duration="3500">
+                    <img src="{% static 'images/icons/quality.png' %}" alt="" class="feature-img" width="60">
+                    <p class="features-box-title fw-bold">Quality Deliverance</p>
+                    <p class="features-box-content">We believe in delivering quality products to our clients by assuring
+                        all their project specifications at the best industry competitive price.</p>
+                </div>
+                <div class="features-box col-md-6 d-flex flex-column align-items-center justify-content-center text-center"
+                    data-aos="fade-left" data-aos-duration="3500">
+                    <img src="{% static 'images/icons/increase.png' %}" alt="" class="feature-img" width="60">
+                    <p class="features-box-title fw-bold">Enhancement</p>
+                    <p class="features-box-content">During Discovery, Designing and Development phases, our technical
+                        team is always there to provide suggestions and edits to improvise their product in the best
+                        possible manner.</p>
+                </div>
+                <div class="features-box col-md-6 d-flex flex-column align-items-center justify-content-center text-center"
+                    data-aos="fade-right" data-aos-duration="3500">
+                    <img src="{% static 'images/icons/coding.png' %}" alt="" class="feature-img" width="60">
+                    <p class="features-box-title fw-bold">Client Centric Development</p>
+                    <p class="features-box-content">We craft the client's needs on web, mobile, and blockchain to tailor
+                        the solutions and enhance growth of the businesses.</p>
+                </div>
+                <div class="features-box col-md-6 d-flex flex-column align-items-center justify-content-center text-center"
+                    data-aos="fade-right" data-aos-duration="3500">
+                    <img src="{% static 'images/icons/agile.png' %}" alt="" class="feature-img" width="60">
+                    <p class="features-box-title fw-bold">Agile Development</p>
+                    <p class="features-box-content">We follow the Agile Development process that helps us to deliver the
+                        project with utmost quality and solid product for reliable and scalable business.</p>
+                </div>
+                <div class="features-box col-md-6 d-flex flex-column align-items-center justify-content-center text-center"
+                    data-aos="fade-left" data-aos-duration="3500">
+                    <img src="{% static 'images/icons/coding (1).png' %}" alt="" class="feature-img" width="60">
+                    <p class="features-box-title fw-bold">Dedicated Development Team</p>
+                    <p class="features-box-content">Our skilled team leverage projects to provide best results.The team
+                        dedicates their every effort and does not look back until it's accomplished.</p>
+                </div>
+                <div class="features-box col-md-6 d-flex flex-column align-items-center justify-content-center text-center"
+                    data-aos="fade-left" data-aos-duration="3500">
+                    <img src="{% static 'images/icons/support.png' %}" alt="" class="feature-img" width="60">
+                    <p class="features-box-title fw-bold">Excellent Support</p>
+                    <p class="features-box-content">We are always there to assist our clients in every possible way to
+                        meet client's expectations and end needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- who we work with -->
+    <section>
+        <div class="work-with text-center row d-flex align-items-center justify-content-center">
+            <h2 data-aos="fade-right" data-aos-duration="2000">Who We Work With</h2>
+            <div class="work-with-box row flex-row align-items-center justify-content-center mt-3">
+                <div class="col-md-3 col-sm-1" data-aos="flip-left" data-aos-duration="1500">
+                    <img src="{% static 'images/icons/presentation.png' %}" alt="" width="60">
+                    <p class="text-light fw-semi-bold mt-2">Start Up Business</p>
+                </div>
+                <div class="col-md-3 col-sm-1" data-aos="flip-left" data-aos-duration="1500">
+                    <img src="{% static 'images/icons/investment.png' %}" alt="" width="60">
+                    <p class="text-light fw-semi-bold mt-2">Small & Medium business</p>
+                </div>
+                <div class="col-md-3 col-sm-1" data-aos="flip-right" data-aos-duration="1500">
+                    <img src="{% static 'images/icons/enterprise.png' %}" alt="" width="60">
+                    <p class="text-light fw-semi-bold mt-2">Enterprice</p>
+                </div>
+                <div class="col-md-3 col-sm-1" data-aos="flip-right" data-aos-duration="1500">
+                    <img src="{% static 'images/icons/revenue.png' %}" alt="" width="60">
+                    <p class="text-light fw-semi-bold mt-2">Agencies</p>
+                </div>
+            </div>
+        </div>
+        <!-- style="filter: brightness(0) invert(1);" -->
+    </section>
+
+    <!-- Work Procedure -->
+    <section class="wpb">
+        <div class="process container">
+            <h2 class="text-center" data-aos="fade-left" data-aos-duration="1000">Our Work Procedure</h2>
+            <ul class="events">
+                <li>
+                    <time></time>
+                    <span class="text-secondary">
+                        <strong class="text-dark">Requirement Gathering</strong>
+                        We follow the first and foremost priority of gathering requirements, resources, and information
+                        to begin our project.
+                    </span>
+                </li>
+                <li>
+                    <time></time>
+                    <span class="text-secondary">
+                        <strong class="text-dark">UI/UX Design</strong>
+                        We create catchy and charming designs with the latest tools of designing to make it a best
+                        user-friendly experience.
+                    </span>
+                </li>
+                <li>
+                    <time></time>
+                    <span class="text-secondary">
+                        <strong class="text-dark">Prototype</strong>
+                        After designing, you will get your prototype, which will be sent ahead for the development
+                        process for the product.
+                    </span>
+                </li>
+                <li>
+                    <time></time>
+                    <span class="text-secondary">
+                        <strong class="text-dark">Development</strong>
+                        Development of web application started using latest tools and technologies with transparency.
+                    </span>
+                </li>
+                <li>
+                    <time></time>
+                    <span class="text-secondary">
+                        <strong class="text-dark">Quality Assurance</strong>
+                        We value quality and provide 100% bug-free applications with no compromise in it.
+                    </span>
+                </li>
+                <li>
+                    <time></time>
+                    <span class="text-secondary">
+                        <strong class="text-dark">Deployment</strong>
+                        After trial and following all processes, your app is ready to launch on the web space.
+                    </span>
+                </li>
+                <li>
+                    <time></time>
+                    <span class="text-secondary">
+                        <strong class="text-dark">Support & Maintenance</strong>
+                        Our company offers you all support and the team is always ready to answer every query after
+                        deployment.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- clients -->
+    <section>
+        <div class="clients">
+            <h2 class="text-center text-DARK" data-aos="fade-right" data-aos-duration="1500">Our clients</h2>
+            <marquee behavior="" direction="left" scrollamount="15" gap="">
+
+                <img width="200" src="{% static 'images/clients/5rocks_logo.png' %}" alt="">
+                <img width="200" src="{% static 'images/clients/c3cbf99077e8d413d839641f3604cc48.png' %}" alt="">
+                <img width="200" src="{% static 'images/clients/cdnlogo.com_softbank.png' %}" alt="">
+                <img width="200" src="{% static 'images/clients/ESA_Company_Logo.jpg' %}" alt="">
+                <img width="200" src="{% static 'images/clients/pngwing.com.png' %}" alt="">
+
+
+            </marquee>
+        </div>
+        <!-- review slides -->
+        <!-- <div class="testimonial_slider_2 container mt-5" data-aos="fade-up" data-aos-duration="1500">
+            <input type="radio" name="slider_2" id="slide_2_1" checked />
+            <input type="radio" name="slider_2" id="slide_2_2" />
+            <input type="radio" name="slider_2" id="slide_2_3" />
+            <input type="radio" name="slider_2" id="slide_2_4" />
+            <div class="boo_inner clearfix">
+                <div class="slide_content">
+                    <div class="testimonial_2">
+                        <div class="content_2">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dicta, eum saepe quod
+                                dolorem totam pariatur corporis possimus animi soluta, modi, nobis repellendus nesciunt
+                                exercitationem facere odit labore eaque dolor.</p>
+                        </div>
+                        <div class="author_2">
+                            <h3>Karen Sweetland</h3>
+                            <h4>Valley Medical Center, San Jose, CA</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide_content">
+                    <div class="testimonial_2">
+                        <div class="content_2">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ex quam vero, ipsum quaerat
+                                voluptatibus tenetur quae suscipit? Consequuntur similique ipsam odit aliquid? Id ex
+                                error vero voluptate. Illo, eaque?</p>
+                        </div>
+                        <div class="author_2">
+                            <h3>Leah Jordan</h3>
+                            <h4> MDiv, Brite Divinity School</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide_content">
+                    <div class="testimonial_2">
+                        <div class="content_2">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur quisquam nulla illo
+                                iusto! Neque nisi necessitatibus est! Natus ducimus dicta atque ab accusantium aliquam
+                                corrupti hic, necessitatibus, reprehenderit labore unde.</p>
+                        </div>
+                        <div class="author_2">
+                            <h3>Brian McNaught</h3>
+                            <h4>Author of <i>Gay Issues in the Workplace</i></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide_content">
+                    <div class="testimonial_2">
+                        <div class="content_2">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ducimus est aliquam, amet
+                                officia qui illum quos dolorum voluptatum neque dolor quaerat ipsum eaque minima, porro
+                                iste provident blanditiis? Labore?</p>
+                        </div>
+                        <div class="author_2">
+                            <h3>Lee Barker</h3>
+                            <h4>President and Professor of Ministry, Meadville Lombard Theological School</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="controls">
+                <label for="slide_2_1"></label>
+                <label for="slide_2_2"></label>
+                <label for="slide_2_3"></label>
+                <label for="slide_2_4"></label>
+            </div>
+        </div> -->
+    </section>
+    <!-- main end -->
+
+
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="text-light py-3 py-md-5 py-xl-8 border-top border-dark">
+            <div class="container overflow-hidden">
+                <div class="row gy-3 gy-md-5 gy-xl-0 align-items-sm-center">
+                    <div class="col-xs-12 col-sm-6 col-xl-3 order-0 order-xl-0">
+                        <div class="footer-logo-wrapper text-center text-sm-start">
+                            <a href="{% url 'about' %}" class="link-light text-decoration-none">
+                                <img src="{% static 'images/logo.png' %}" alt="Logo" width="60" height="50">
+                                Picacod Consultancy
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-xl-6 order-2 order-xl-1">
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link link-secondary px-2 px-md-3" href="{% url 'index' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-secondary px-2 px-md-3" href="{% url 'about' %}">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-secondary px-2 px-md-3" href="{% url 'contact' %}">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-secondary px-2 px-md-3" href="#!">Terms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-secondary px-2 px-md-3" href="#!">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-xl-3 order-1 order-xl-2">
+                        <div class="social-media-wrapper">
+                            <ul class="list-unstyled m-0 p-0 d-flex justify-content-center justify-content-sm-end"
+                                style="color: aliceblue;">
+                                <li class="me-3">
+                                    <a href="https://www.linkedin.com/company/picacod-consultancy-services-pvt-ltd">
+                                        <i class="fa-brands fa-linkedin-in fs-5 text-light"></i>
+                                    </a>
+                                </li>
+                                <li class="me-3">
+                                    <a href="#!">
+                                        <i class="fa-brands fa-x-twitter fs-5 text-light"></i>
+                                    </a>
+                                </li>
+                                <li class="me-3">
+                                    <a href="https://www.instagram.com/picacod">
+                                        <i class="fa-brands fa-instagram fs-5 text-light"></i>
+                                    </a>
+                                </li>
+                                <li class="me-3">
+                                    <a href="mailto:info@picacod.com">
+                                        <i class="fa-regular fa-envelope fs-5 text-light"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright - Component -->
+        <div class="text-light py-3 py-md-5 border-top  border-dark">
+            <div class="container overflow-hidden">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer-copyright-wrapper text-center">
+                            &copy; 2024. All Rights Reserved.
+                        </div>
+                        <div class="credits text-secondary text-center mt-2 fs-8">
+                            <p>Picacod Consultancy Services PVT.LTD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- footer end-->
+
+    <!-- Back to Top Button -->
+    <a class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="fa-solid fa-arrow-up text-light"></i>
+    </a>
+    <!-- Whatsapp Button -->
+    <a class="whatsapp-btn d-flex align-items-center justify-content-center">
+        <img src="{% static 'images/icons/whatsapp.png' %}" alt="">
+    </a>
+</body>
+
+<!-- javascript -->
+<script type="text/javascript" src="{% static 'main.js' %}"></script>
+<!-- bootstrap script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+<!-- aos -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</html>

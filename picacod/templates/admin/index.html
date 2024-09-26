@@ -1,0 +1,50 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+
+
+         
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 content">
+                <h2>Dashboard</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Currently Openings</h5>
+                                <p class="card-text">{{openings}}</p>
+                                <a href="{% url 'view_job' %}" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Applications</h5>
+                                <p class="card-text">{{applications}}</p>
+                                <a href="{% url 'applications' %}" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Products</h5>
+                                <p class="card-text">Manage your product listings</p>
+                                <a href="#" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Reports</h5>
+                                <p class="card-text">View sales and performance reports</p>
+                                <a href="#" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </main>
+        </div>
+    </div> 
+
+{% endblock %}
